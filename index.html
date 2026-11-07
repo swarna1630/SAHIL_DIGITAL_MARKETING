@@ -618,27 +618,33 @@ footer.contact-only-footer h4{
 footer.contact-only-footer .footer-contact-details{
   display:flex;
   justify-content:center;
-  align-items:stretch;
+  align-items:center;
   flex-wrap:wrap;
-  gap:14px;
+  gap:18px;
 }
 footer.contact-only-footer .footer-contact-details p{
   display:flex;
-  flex-direction:column;
+  display:flex;
+  align-items:center;
   justify-content:center;
-  gap:7px;
-  min-width:190px;
-  max-width:100%;
+  width:58px;
+  height:58px;
+  min-width:58px;
   margin:0;
-  padding:17px 22px;
-  color:#9fb3d1;
-  font-size:.92rem;
-  line-height:1.6;
-  border:1px solid rgba(110,190,255,.18);
-  border-radius:14px;
-  background:rgba(255,255,255,.025);
-  overflow-wrap:anywhere;
+  padding:0;
+  border:1px solid rgba(110,190,255,.24);
+  border-radius:50%;
+  background:rgba(255,255,255,.035);
+  transition:background .25s ease,border-color .25s ease,transform .25s ease;
 }
+
+footer.contact-only-footer .footer-contact-link{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--w);text-decoration:none;font-weight:600;transition:color .25s ease,transform .25s ease}
+footer.contact-only-footer .footer-contact-link:hover{color:var(--cyan);transform:translateY(-2px)}
+footer.contact-only-footer .footer-contact-details p:has(.footer-contact-link:hover){border-color:var(--cyan);background:rgba(0,220,255,.08)}
+footer.contact-only-footer .footer-contact-label,footer.contact-only-footer .footer-contact-link span{display:none!important}
+footer.contact-only-footer .footer-contact-link svg{width:25px;height:25px;flex:0 0 25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+footer.contact-only-footer .footer-contact-link svg .icon-fill{fill:currentColor;stroke:none}
+
 footer.contact-only-footer .footer-contact-label{
   color:var(--cyan);
   font-size:.76rem;
@@ -654,8 +660,8 @@ footer.contact-only-footer small{
 }
 @media(max-width:600px){
   footer.contact-only-footer{padding:44px 5vw 24px;gap:22px}
-  footer.contact-only-footer .footer-contact-details{width:100%;flex-direction:column;align-items:stretch}
-  footer.contact-only-footer .footer-contact-details p{min-width:0;width:100%;box-sizing:border-box}
+  footer.contact-only-footer .footer-contact-details{width:100%;flex-direction:row;align-items:center;justify-content:center}
+  footer.contact-only-footer .footer-contact-details p{width:54px;height:54px;min-width:54px;box-sizing:border-box}
 }
 
 </style>
@@ -962,9 +968,9 @@ footer.contact-only-footer small{
   <div class="footer-contact">
     <h4>Contact Us</h4>
     <div class="footer-contact-details">
-      <p><span class="footer-contact-label">Email</span><span>add your email</span></p>
-      <p><span class="footer-contact-label">Phone</span><a href="tel:+917676974316">+91 76769 74316</a></p>
-      <p><span class="footer-contact-label">Connect</span><span>WhatsApp and social links: add URLs</span></p>
+      <p><a class="footer-contact-link" href="https://wa.me/917619271537" target="_blank" rel="noopener noreferrer" aria-label="Chat with SAHIL Digital Marketing on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.06 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z"/></svg></a></p>
+      <p><a class="footer-contact-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=info%40sahildigitalmarketing.com" aria-label="Email info@sahildigitalmarketing.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a></p>
+      <p><a class="footer-contact-link" href="https://www.instagram.com/reel/DfcV6LOshsx/?rpxt=MW9iemRhdTB5aTRpNg==" target="_blank" rel="noopener noreferrer" aria-label="Open SAHIL Digital Marketing on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="icon-fill"/></svg></a></p>
     </div>
   </div>
   <small>© 2026 SAHIL Digital Marketing. All rights reserved.</small>
@@ -1142,8 +1148,8 @@ if(contactSection&&contactCanvas){
    Add your Supabase Project URL and publishable/anon key below after creating the project.
    The public key is designed for browser use; database RLS policies protect the table.
 */
-var SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-var SUPABASE_ANON_KEY = "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY";
+var SUPABASE_URL = "https://wwqvqmajascegrekeakm.supabase.co";
+var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind3cXZxbWFqYXNjZWdyZWtlYWttIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQwMTE5MjMsImV4cCI6MjEwOTU4NzkyM30.tZKQhozPT7d5MVlz6W15NXmliAF-sAYQpG7Xoeou6RQ";
 var contactForm = $("#fm");
 var submitButton = contactForm.querySelector('button[type="submit"]');
 var submitLabel = submitButton.innerHTML;
